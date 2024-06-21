@@ -7,7 +7,7 @@ import com.example.donation.dons.dao.entities.DonStatus;
 
 public interface DonService {
 
-    //Read operation
+    //Read
     List<Don> getAllDon();
     Optional<Don> getDonById(Long id);
 

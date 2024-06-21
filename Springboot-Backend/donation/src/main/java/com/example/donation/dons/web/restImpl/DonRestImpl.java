@@ -14,33 +14,40 @@ import com.example.donation.dons.web.rest.DonRest;
 
 @RestController
 public class DonRestImpl implements DonRest {
+    
+    //Dynamic dependency injection
     @Autowired
     DonService donservice;
 
+    //create
     @Override
     public ResponseEntity<Don> createDon(Don requestMap) {
         Don createdDon = donservice.addDon(requestMap);
         return new ResponseEntity<>(createdDon, HttpStatus.CREATED);
     }
 
+    //update
     @Override
     public ResponseEntity<Don> updateDon(Don don, Long id) {
         Don updatedDon = donservice.updateDon(don, id);
         return new ResponseEntity<>(updatedDon, HttpStatus.OK);
     }
 
+    //delete
     @Override
     public ResponseEntity<Void> deleteDon(Long id) {
         donservice.deleteDonById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    //Read all
     @Override
     public ResponseEntity<List<Don>> getAllDon() {
         List<Don> dons = donservice.getAllDon();
         return new ResponseEntity<>(dons, HttpStatus.OK);
     }
 
+    //Read by id
     @Override
     public ResponseEntity<Don> getByIdDon(Long id) {
         Don don = donservice.getDonById(id)
@@ -49,6 +56,7 @@ public class DonRestImpl implements DonRest {
 
     }
 
+    //update don's status
     @Override
     public ResponseEntity<Don> updateDonStatus(DonStatus status, Long id) {
         Don updatedDon = donservice.updateDonStatus(status, id)
