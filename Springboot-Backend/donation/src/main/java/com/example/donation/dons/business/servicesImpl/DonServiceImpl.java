@@ -49,11 +49,13 @@ public class DonServiceImpl implements DonService {
         return donRepository.save(newDon);
     }
 
+    //delete by id
     @Override
     public void deleteDonById(Long id) {
        donRepository.deleteById(id);
     }
 
+    //Update Don's Status
     @Override
     public Optional<Don> updateDonStatus(DonStatus status, Long id) {
         Optional<Don> optionalDon = donRepository.findById(id);

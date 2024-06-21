@@ -21,11 +21,11 @@ public interface DonRest {
     @PostMapping("/create")
     public ResponseEntity<Don> createDon(@RequestBody Don requestMap);
 
-    //update don with id
+    //update don by id
     @PutMapping("/{id}")
     public ResponseEntity<Don> updateDon(@RequestBody Don don, @PathVariable Long id);
 
-    //delete don with id
+    //delete don by id
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteDon(@PathVariable Long id);
 
@@ -33,7 +33,7 @@ public interface DonRest {
     @GetMapping
     public ResponseEntity<List<Don>> getAllDon();
 
-    //read don with id
+    //read don by id
     @GetMapping("/{id}")
     public ResponseEntity<Don> getByIdDon(@PathVariable Long id);
 
@@ -41,8 +41,4 @@ public interface DonRest {
     @PutMapping("/{id}/status")
     public ResponseEntity<Don> updateDonStatus(@RequestParam DonStatus status, @PathVariable Long id);
     
-    /* //update don's category
-    @PutMapping("{id}/category")
-    public ResponseEntity<Don> updateDonCategory(@PathVariable Long id, @RequestParam Don category); */
-
 }
