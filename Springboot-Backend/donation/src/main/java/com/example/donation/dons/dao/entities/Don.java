@@ -1,22 +1,22 @@
-package com.example.donation.dao.entities;
-
-import java.io.Serializable;
+package com.example.donation.dons.dao.entities;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-@NamedQuery(name = "User.findByEmailId", query = "select u from User u where u.email =: email")
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,24 +25,26 @@ import lombok.Setter;
 @DynamicInsert
 @DynamicUpdate
 @Entity
-@Table(name = "Users")
-public class User implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+@Table(name = "Dons")
+public class Don {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+
+    private Long id;
 
     private String name;
     
-    private String contactNumber;
-    
-    private String email;
+    private String photo;
 
-    private String password;
-    
-    private String status;
+    @Column(name = "Status")
+    @Enumerated(EnumType.STRING)
+    private DonStatus status;
 
-    private String role;
+    @ManyToOne
+    @JoinColumn(name = "Category")
+
+    private Category category;
+
 }
+

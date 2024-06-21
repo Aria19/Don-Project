@@ -1,4 +1,4 @@
-package com.example.donation.business.servicesImpl;
+package com.example.donation.users.business.servicesImpl;
 
 import java.util.Map;
 import java.util.Objects;
@@ -8,11 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.example.donation.business.services.UserService;
-import com.example.donation.constants.DonConstants;
-import com.example.donation.dao.entities.User;
-import com.example.donation.dao.repositories.UserRepository;
-import com.example.donation.utils.DonUtils;
+import com.example.donation.users.business.services.UserService;
+import com.example.donation.users.constants.DonConstants;
+import com.example.donation.users.dao.entities.User;
+import com.example.donation.users.dao.repositories.UserRepository;
+import com.example.donation.users.utils.DonUtils;
 
 import lombok.extern.slf4j.Slf4j;
 

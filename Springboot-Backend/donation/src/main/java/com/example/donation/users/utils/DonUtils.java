@@ -1,4 +1,4 @@
-package com.example.donation.utils;
+package com.example.donation.users.utils;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

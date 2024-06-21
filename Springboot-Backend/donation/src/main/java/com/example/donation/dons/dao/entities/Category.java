@@ -1,4 +1,4 @@
-package com.example.donation.dao.entities;
+package com.example.donation.dons.dao.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,11 +16,11 @@ import lombok.Setter;
 @Getter
 
 @Entity
-@Table(name = "categorie")
-public class Categorie {
+@Table(name = "Category")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nom;
 
 }
