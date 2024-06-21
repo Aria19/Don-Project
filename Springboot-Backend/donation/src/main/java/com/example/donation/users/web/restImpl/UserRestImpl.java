@@ -1,4 +1,4 @@
-package com.example.donation.web.restImpl;
+package com.example.donation.users.web.restImpl;
 
 import java.util.Map;
 
@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.donation.business.services.UserService;
-import com.example.donation.constants.DonConstants;
-import com.example.donation.utils.DonUtils;
-import com.example.donation.web.rest.UserRest;
+import com.example.donation.users.business.services.UserService;
+import com.example.donation.users.constants.DonConstants;
+import com.example.donation.users.utils.DonUtils;
+import com.example.donation.users.web.rest.UserRest;
 
 @RestController
 public class UserRestImpl implements UserRest {

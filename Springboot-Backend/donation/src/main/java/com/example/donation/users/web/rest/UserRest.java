@@ -1,4 +1,4 @@
-package com.example.donation.web.rest;
+package com.example.donation.users.web.rest;
 
 import java.util.Map;
 
